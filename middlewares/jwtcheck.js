@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
       'secret key',
       (err, decodedToken) => {
         if(err) {
-          res.status(401).json({ message: `Access Denied`});
+          res.status(401).json({ message: `You Shall Not Pass!`});
         } else {
           req.decodedToken = decodedToken;
           next();
