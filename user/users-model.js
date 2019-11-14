@@ -19,17 +19,19 @@ function findBy(filter) {
 }
 
 function find() {
-  return db('users').select('id', 'username', 'password', 'department');
+  return db('users').select('id', 'username', 'department');
 }
 
 function findById(id) {
   return db('users')
     .where({ id })
-    .first();
+    .first()
+    .select('id', 'username', 'department');
 }
 
 
 function findByDepartment(department) {
   return db('users')
     .where({ department })
+    .select('id', 'username', 'department')
 }
